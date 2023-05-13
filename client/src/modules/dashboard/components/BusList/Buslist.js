@@ -10,8 +10,7 @@ export default function BusList() {
     axios.get("/api")
     .then(response => {
       setBusLines(response.data)
-    }
-    )
+    })
   }, [])
 
   return(
