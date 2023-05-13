@@ -51,22 +51,9 @@ app.get('/api', (req, res) => {
         busLines.forEach(busLine => {
             busLine.busStops.forEach((stop, i) => busLine.busStops[i] = stopNames[stop])
         })
-        
+
         res.send(busLines)
     })
 });
 
 app.listen(5000, () => {console.log("Server started on port 5000")});
-
-/*
-const BusLines = [
-  {
-    line: '1',
-    busStops: ['1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4','1','2','3','4' ]
-  }, 
-  {
-    line: '2',
-    busStops: ['5','6','7','5','6','7','5','6','7','5','6','7','5','6','7','5','6','7','5','6','7','5','6','7']
-  }
-];
-*/
