@@ -49,9 +49,9 @@ app.get('/api', (req, res) => {
     /* ----- Update bus lines with bus stop names  -----*/
     Promise.all([busStopsPerLine, BusStopNames]).then(([busLines, stopNames]) => {
         busLines.forEach(busLine => {
-            busLine.busStops.forEach((stop, i) => busLine.busStops[i] = {stopNumber: stop, stopName: stopNames[stop]})
+            busLine.busStops.forEach((stop, i) => busLine.busStops[i] = stopNames[stop])
         })
-        console.log(busLines)
+        
         res.send(busLines)
     })
 });

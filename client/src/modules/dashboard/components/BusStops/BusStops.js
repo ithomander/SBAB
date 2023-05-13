@@ -13,16 +13,16 @@ function sortToColumns(list, limit) {
 }
 
 export default function BusStops({stopsList}) {    
-    const columns = sortToColumns(stopsList, 40)
+    const columns = sortToColumns(stopsList, 60)
 
     return (
         <div className='container-fluid flex mx-0'>
             <div className='row'>
                 {
-                    columns.map(col =>  {
+                    columns.map((col, i) =>  {
                         return (
-                            <div key={col} className='col-2'>
-                                {col.map(stop => <div key={stop}><small>{stop}</small></div>)}
+                            <div key={i} className='col-3'>
+                                {col.map((stop, i) => <div key={i}><small>{stop}</small></div>)}
                             </div>
                         )
                     })
