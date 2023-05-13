@@ -6,6 +6,8 @@ const keys = require('./config/keys');
 const app = express(); 
 
 app.get('/api', (req, res) => {
+
+    // Get bus lines and stop numbers per line
     axios({
         method: 'get',
         url: `https://api.sl.se/api2/LineData.json?model=jour&key=${keys.trafikLabKey}&DefaultTransportModeCode=BUS`,
@@ -15,8 +17,8 @@ app.get('/api', (req, res) => {
         const result = response.data.ResponseData.Result
         // console.log(result);
         
-        // Create a list with objects
-        const organizedList = result.reduce((acc, stop) => {
+        // Create an array with objects of Bus line its stopnumbers
+        const stopsPerLine = result.reduce((acc, stop) => {
             if (acc.some(element => element.line === stop.LineNumber)) {
                 const lineIndex = acc.findIndex(element => element.line === stop.LineNumber)
                 acc[lineIndex].busStops.push(stop.JourneyPatternPointNumber)
@@ -25,17 +27,30 @@ app.get('/api', (req, res) => {
             }
             return acc;
         }, []);
-        //console.log(organizedList);
+        // console.log(stopsPerLine);
 
-        // Sort only top ten
-        const sortedList = organizedList.sort((a, b) => b.busStops.length - a.busStops.length).slice(0,10);
-        // console.log(sortedList);
+        // Select top ten bus lines
+        const topBusLines = stopsPerLine.sort((a, b) => b.busStops.length - a.busStops.length).slice(0,10);
+        // console.log(topBusLines);
     
-        // Send response to frontend. res.json?
-        res.json(sortedList)
+        // Send response to frontend
+        res.json(topBusLines)
 
-        // Map name dictionary
+
         // Add Try catch?
+    })
+
+    // Get names of bus stops
+    axios({
+        method: 'get',
+        url: `https://api.sl.se/api2/LineData.json?model=stop&key=${keys.trafikLabKey}`,
+        headers: {'Accept-Encoding': 'gzip, deflate'}
+    }).then(response => {
+        const result = response.data.ResponseData.Result
+        const stopDictionary = Object.fromEntries(result.map(stop => [stop.StopPointNumber, stop.StopPointName]))
+        console.log(stopDictionary)
+
+        res.json("Hello")
     })
 });
 

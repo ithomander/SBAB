@@ -28,29 +28,32 @@ export default function BusList() {
     <div className="mx-5">
       { 
         (busLines && busLines.length) ? (
-          busLines.map(el => <div key={el.line}>{el.line + ' The nr of stops is ' + el.busStops.length}</div>)
-          /*
+          //busLines.map(el => <div key={el.line}>{el.line + ' The nr of stops is ' + el.busStops.length}</div>)
+          
           <Accordion>
             {busLines.map(busLine => {
               return (
-              <Accordion.Item eventKey={busLine.line}>
-                <Accordion.Header>{busLine.line}</Accordion.Header>
-                <Accordion.Body>
-                  <BusStops stopsList={busLine.busStops}></BusStops>
-                </Accordion.Body>
-              </Accordion.Item>
+                <div key={busLine.line}>
+                  <Accordion.Item eventKey={busLine.line}>
+                    <Accordion.Header>{`Bus line number ${busLine.line}`}</Accordion.Header>
+                    <Accordion.Body>
+                      <BusStops stopsList={busLine.busStops}></BusStops>
+                    </Accordion.Body>
+                  </Accordion.Item>
+              </div>
               )
             })}
           </Accordion>
-          */
+          
       ) : <div>Loading...</div>
       }
+      {/*
       <Accordion>
             {BusLines.map(busLine => {
               return (
                 <div key={busLine.line}>
                   <Accordion.Item eventKey={busLine.line}>
-                    <Accordion.Header>{busLine.line}</Accordion.Header>
+                    <Accordion.Header>{`Bus line number ${busLine.line}`}</Accordion.Header>
                     <Accordion.Body>
                       <BusStops stopsList={busLine.busStops}></BusStops>
                     </Accordion.Body>
@@ -59,6 +62,7 @@ export default function BusList() {
               )
             })}
           </Accordion>
+          */}
     </div>
   )
 }
