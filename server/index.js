@@ -33,6 +33,9 @@ app.get('/api', (req, res) => {
     
         // Send response to frontend. res.json?
         res.json(sortedList)
+
+        // Map name dictionary
+        // Add Try catch?
     })
 });
 
