@@ -14,7 +14,7 @@ function BusList() {
           setBusLines(response.data);
         })
         .catch((error) => {
-          window.alert(error.message);
+          window.alert(error.response.data)
         });
     };
     fetchData();
