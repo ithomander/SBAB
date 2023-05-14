@@ -6,7 +6,7 @@ This project is a smallscale fullstack application that finds out which bus line
 
 The application is using React.js, JavaScript and Bootstrap in the frontend. In the backend the application is using Node.js and Express.js.
 
-Future improvement of the application would include testing in backend, setting up tests in CI/CD, running the client and server concurrently, displaying error better and styling in frontend.
+Further improvement of the application would include testing in backend, setting up tests in CI/CD, displaying error better and styling in frontend.
 
 ## Requirements
 
@@ -20,9 +20,10 @@ Get API key: Follow instructions on Trafiklab's webiste [here](https://www.trafi
 
 ## Getting started
 
-Open two terminal windows\
-First, run the server: `npm run dev`\
-Then, runt the client: `npm start`
+From the root directory\
+To run both client and server simultaneously: `npm run dev`\
+To run only the server: `npm start server`\
+To run only the client: `npm start client`\
 Open [http://localhost:3000/api](http://localhost:3000/api) to view it in your browser.
 
 ## Testing
