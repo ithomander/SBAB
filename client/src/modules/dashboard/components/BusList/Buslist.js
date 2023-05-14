@@ -6,11 +6,17 @@ import BusStops from '../BusStops/BusStops';
 export default function BusList() {
   const [busLines, setBusLines] = useState([]);
 
+  // TODO: Add errorhandling
   useEffect(() => {
-    axios.get("/api")
-    .then(response => {
-      setBusLines(response.data)
-    })
+    const fetchData = async () => {
+      await axios.get("/api")
+        .then(response => {
+          setBusLines(response.data)
+        }).catch((error) => {
+          console.log(error.message);
+      })
+    }
+    fetchData();
   }, [])
 
   return(

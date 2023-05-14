@@ -14,6 +14,7 @@ const mockBusLines = [
   }
 ]
 
+// Setting up mock service worker to intercept HTTP requests
 const server = setupServer(rest.get("/api", (req, res, ctx) => {
     return res(
         ctx.json(mockBusLines)
@@ -23,16 +24,16 @@ const server = setupServer(rest.get("/api", (req, res, ctx) => {
 beforeAll(() => server.listen());
 afterAll(() => server.close());
 
-describe("Bus array tests with msw", () => {
-    it("Should display loading at initial render", () => {
+describe("The bus list", () => {
+    
+    it("should display loading at initial render", () => {
       render(<BusList />);
       expect(screen.getByText("Loading...")).toBeVisible()
     })
 
-    it("Should display the line number in accordian", async () => {
+    it("should display the line number in accordian", async () => {
         render(<BusList />);
-        const busLine = await screen.findByText("Bus line number 1");
-        expect(busLine).toBeVisible();
+        expect(await screen.findByText("Bus line number 1")).toBeVisible();
     })
 
 });

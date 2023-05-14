@@ -3,15 +3,11 @@ import BusStops from "./BusStops";
 
 const mockStops = ["Norrtälje busstation", "Älmsta busstation", "Harnäset", "Sjöängen", "Skeppsmyra affär", "Skeppsmyra by", "Skeppsmyra östra"]
 
-describe("Bus stops tests", () => {
+describe("The bus stops", () => {
 
-    it("Should create two columns", () => {
-
-    })
-
-    it("Should show bus stops", () => {
-        // render(<BusStops stopsList={mockStops}/>)
-       
+    it("should show bus stop names", async () => {
+        render(<BusStops stopsList={mockStops}/>)
+        expect(await screen.findByText("Norrtälje busstation")).toBeVisible()
     });
     
   });
