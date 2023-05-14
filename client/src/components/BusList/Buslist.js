@@ -12,14 +12,14 @@ export default function BusList() {
         .then(response => {
           setBusLines(response.data)
         }).catch((error) => {
-          console.log(error.message);
+          window.alert(error.message);
       })
     }
     fetchData();
   }, [])
 
   return(
-    <div className="mx-5">
+    <div className="mx-5 mt-5">
       { 
         (busLines && busLines.length) ? (
           <Accordion>
@@ -36,7 +36,6 @@ export default function BusList() {
               )
             })}
           </Accordion>
-          
       ) : <div>Loading...</div>
       }
     </div>

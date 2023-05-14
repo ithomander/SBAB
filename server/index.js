@@ -10,7 +10,6 @@ app.get("/api", (req, res) => {
             updateBusStopWithNames(busLines, stopNames);
             res.send(busLines);
         }).catch(error => {
-            console.log(error);
             res.status(500).send("Could not retrieve bus lines and stops");
         })
 });
