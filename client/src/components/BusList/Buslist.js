@@ -6,7 +6,6 @@ import BusStops from '../BusStops/BusStops';
 export default function BusList() {
   const [busLines, setBusLines] = useState([]);
 
-  // TODO: Add errorhandling
   useEffect(() => {
     const fetchData = async () => {
       await axios.get("/api")
