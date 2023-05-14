@@ -1,5 +1,5 @@
 import React from 'react';
-import BusList from './modules/dashboard/components/BusList/Buslist';
+import BusList from './components/BusList/Buslist';
 
 export default function App() {
   return (

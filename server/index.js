@@ -23,7 +23,7 @@ function getBusLines() {
     }).then(response => {
         const result = response.data.ResponseData.Result
         
-        // Create an array with objects of bus line and its stop numbers
+        // Create an array with objects of bus lines and its stop numbers
         const stopsPerLine = result.reduce((acc, stop) => {
             if (acc.some(element => element.line === stop.LineNumber)) {
                 const lineIndex = acc.findIndex(element => element.line === stop.LineNumber)
