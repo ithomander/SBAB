@@ -9,5 +9,4 @@ describe("The bus stops", () => {
         render(<BusStops stopsList={mockStops}/>)
         expect(await screen.findByText("Norrtälje busstation")).toBeVisible()
     });
-    
-  });
+});
