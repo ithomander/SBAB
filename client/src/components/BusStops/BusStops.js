@@ -1,7 +1,9 @@
 import React from 'react';
 
 export default function BusStops({stopsList}) {    
-    const columns = sortToColumns(stopsList, 70)
+    // Prepare stops to fit in 4 colums
+    const rows = Math.ceil(stopsList.length/4)
+    const columns = sortToColumns(stopsList, rows)
 
     return (
         <div className='container-fluid flex mx-0'>
