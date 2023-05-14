@@ -15,15 +15,20 @@ Further improvement of the application would include testing in backend, setting
 
 ## Set up
 
-Install dependencies: In client and in server, run `npm install` to install all dependencies\
-Get API key: Follow instructions on Trafiklab's webiste [here](https://www.trafiklab.se/docs/using-trafiklab/getting-api-keys/). You will need to create an account, create a new project and select the API "SL Hållplatser och Linjer 2". Add the API key to your project by adding a keys.js file where you export the key. This file should be added to the `.gitignore` file to avoid sharing it with others.
+Install dependencies:\
+
+1. In root directory run `npm install`\
+2. In client, run `npm install`\
+3. In server run `npm install`\
+
+Get API key: Follow instructions on Trafiklab's webiste [here](https://www.trafiklab.se/docs/using-trafiklab/getting-api-keys/). You will need to create an account, create a new project and select the API "SL Hållplatser och Linjer 2". Add the API key to your project by adding inserting you key into the variable `API_KEY` in `server/index.js`.
 
 ## Getting started
 
 From the root directory\
 To run both client and server simultaneously: `npm run dev`\
-To run only the server: `npm start server`\
-To run only the client: `npm start client`\
+To run only the server: `npm run server`\
+To run only the client: `npm run client`\
 Open [http://localhost:3000/api](http://localhost:3000/api) to view it in your browser.
 
 ## Testing

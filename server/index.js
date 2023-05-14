@@ -1,6 +1,6 @@
 const express = require("express");
 const axios = require("axios");
-const keys = require("./config/keys");
+const API_KEY = "INSERT-API-KEY-HERE"
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.get("/api", (req, res) => {
 function getBusLines() {
   return axios({
     method: "get",
-    url: `https://api.sl.se/api2/LineData.json?model=jour&key=${keys.trafikLabKey}&DefaultTransportModeCode=BUS`,
+    url: `https://api.sl.se/api2/LineData.json?model=jour&key=${API_KEY}&DefaultTransportModeCode=BUS`,
     headers: { "Accept-Encoding": "gzip, deflate" },
   }).then((response) => {
     const result = response.data.ResponseData.Result;
@@ -52,7 +52,7 @@ function getBusLines() {
 function getStopNames() {
   return axios({
     method: "get",
-    url: `https://api.sl.se/api2/LineData.json?model=stop&key=${keys.trafikLabKey}`,
+    url: `https://api.sl.se/api2/LineData.json?model=stop&key=${API_KEY}`,
     headers: { "Accept-Encoding": "gzip, deflate" },
   }).then((response) => {
     const result = response.data.ResponseData.Result;
