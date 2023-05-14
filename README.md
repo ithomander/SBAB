@@ -1,13 +1,15 @@
 # The top 10 bus lines in Stockholm
 
 ## Description
-This project is a smallscale fullstack application that finds out which bus lines in Stockholm have the most bus stops on their routes and shows the top ten. The application shows the name of the bus line as well as the name for all the bus stops. This application is using data retrieved from [Trafiklab’s](https://www.trafiklab.se/) open API. 
+
+This project is a smallscale fullstack application that finds out which bus lines in Stockholm have the most bus stops on their routes and shows the top ten. The application shows the name of the bus line as well as the name for all the bus stops. This application is using data retrieved from [Trafiklab’s](https://www.trafiklab.se/) open API.
 
 The application is using React.js, JavaScript and Bootstrap in the frontend. In the backend the application is using Node.js and Express.js.
 
 Future improvement of the application would include testing in backend, setting up tests in CI/CD, running the client and server concurrently, displaying error better and styling in frontend.
 
 ## Requirements
+
 - Node
 - API key to Trafiklab’s open API ["SL Hållplatser och Linjer 2"](https://www.trafiklab.se/api/sl-hallplatser-och-linjer-2)
 
@@ -20,7 +22,8 @@ Get API key: Follow instructions on Trafiklab's webiste [here](https://www.trafi
 
 Open two terminal windows\
 First, run the server: `npm run dev`\
-Then, runt the client: `npm start` 
+Then, runt the client: `npm start`
+Open [http://localhost:3000/api](http://localhost:3000/api) to view it in your browser.
 
 ## Testing
 
