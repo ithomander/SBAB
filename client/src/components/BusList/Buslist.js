@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Accordion from 'react-bootstrap/Accordion';
-import BusStops from '../BusStops/BusStops';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Accordion from "react-bootstrap/Accordion";
+import BusStops from "../BusStops/BusStops";
 
 export default function BusList() {
   const [busLines, setBusLines] = useState([]);

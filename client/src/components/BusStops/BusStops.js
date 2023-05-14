@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function BusStops({stopsList}) {    
     // Prepare stops to fit in 4 colums
@@ -6,12 +6,12 @@ export default function BusStops({stopsList}) {
     const columns = sortToColumns(stopsList, rows)
 
     return (
-        <div className='container-fluid flex mx-0'>
-            <div className='row'>
+        <div className="container-fluid flex mx-0">
+            <div className="row">
                 {
                     columns.map((col, i) =>  {
                         return (
-                            <div key={i} className='col-3'>
+                            <div key={i} className="col-3">
                                 {col.map((stop, i) => <div key={i}><small>{stop}</small></div>)}
                             </div>
                         )
